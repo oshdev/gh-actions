@@ -12,3 +12,9 @@ func main() {
 func add(a, b int) int {
 	return a + b
 }
+
+func testAdding(t *testing.T) {
+	if add(1, 2) != 3 {
+		t.Errorf("big bada boom")
+	}
+}
