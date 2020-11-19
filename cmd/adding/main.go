@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/oshdev/gh-actions/pkg/adding"
 )
 

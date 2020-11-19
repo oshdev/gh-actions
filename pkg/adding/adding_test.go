@@ -1,8 +1,9 @@
 package adding_test
 
 import (
-	"github.com/oshdev/gh-actions/pkg/adding"
 	"testing"
+
+	"github.com/oshdev/gh-actions/pkg/adding"
 )
 
 func TestAdding(t *testing.T) {
