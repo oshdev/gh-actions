@@ -16,17 +16,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: [common-setup]
     steps:
-      - echo task 1
+      - run: echo task 1
     
   task2:
     runs-on: ubuntu-latest
     needs: [common-setup]
     steps:
-      - echo task 2
+      - run: echo task 2
     
   task3:
     runs-on: ubuntu-latest
     needs: [task1, task2]
     steps:
-      - echo task 3
+      - run: echo task 3
     
