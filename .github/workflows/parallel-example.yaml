@@ -10,7 +10,7 @@ jobs:
     steps:
       - run: echo setting up
       - run: echo needs codebase, so...
-      - uses: actions/checkout@2
+      - uses: actions/checkout@v2
     
   task1:
     runs-on: ubuntu-latest
