@@ -2,12 +2,9 @@ name: Go
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
-
   build:
     name: Build
     runs-on: ubuntu-latest
