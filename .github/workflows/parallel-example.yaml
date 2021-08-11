@@ -5,28 +5,48 @@ on:
     branches: [ main ]
 
 jobs:
-  common-setup:
+  setup:
     runs-on: ubuntu-latest
     steps:
-      - run: echo setting up
-      - run: echo needs codebase, so...
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: npm
+      - run: npm ci
     
-  task1:
+  lint:
     runs-on: ubuntu-latest
     needs: [common-setup]
     steps:
-      - run: echo task 1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: npm
+      - run: npm ci
+      - run: npx eslint
     
-  task2:
+  test:
     runs-on: ubuntu-latest
     needs: [common-setup]
     steps:
-      - run: echo task 2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: npm
+      - run: npm ci
+      - run: npx jest
     
-  task3:
+  typecheck:
     runs-on: ubuntu-latest
-    needs: [task1, task2]
+    needs: [common-setup]
     steps:
-      - run: echo task 3
-    
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: npm
+      - run: npm ci
+      - run: npx tsc
